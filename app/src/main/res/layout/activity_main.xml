@@ -71,10 +71,14 @@
             android:text="Sex Month"
             android:textAlignment="center" />
 
-        <Spinner
-            android:id="@+id/monthSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/dateEdtTxt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Date"
+            android:layout_marginRight="10dp"/>
+
     </LinearLayout>
 
     <LinearLayout
