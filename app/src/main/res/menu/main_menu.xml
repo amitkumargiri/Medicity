@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:shownIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_home"
+            android:title="Home" />
+        <item android:id="@+id/nav_current_medicity"
+            android:icon="@mipmap/ic_current_medicity"
+            android:title="Current Medicity" />
+        <item android:id="@+id/nav_child_vaccine"
+            android:icon="@mipmap/ic_vaccine"
+            android:title="Child Vaccination" />
+        <item android:id="@+id/nav_bmi"
+            android:icon="@mipmap/ic_bmi"
+            android:title="BMI" />
+        <item android:id="@+id/nav_diet"
+            android:icon="@mipmap/ic_diet"
+            android:title="Diet" />
+        <item android:id="@+id/nav_gender_predict"
+            android:icon="@mipmap/ic_gender_predict"
+            android:title="Gender Predict" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/nav_share"
+                android:icon="@mipmap/ic_share"
+                android:title="Share"
+                />
+        </menu>
+    </item>
+</menu>
