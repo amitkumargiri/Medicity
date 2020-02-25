@@ -32,12 +32,12 @@ public class HomeFragment extends Fragment {
         reasonTxtView = root.findViewById(R.id.reasonTxtView);
         totalAmountTxtView = root.findViewById(R.id.totalAmountTxtView);
         selfHealTxtView = root.findViewById(R.id.selfHealCountTxtView);
-        //populateData();
-
+        populateData();
         homeViewModel.docVisitCount.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer s) {
-                docVisitCountTxtView.setText(s.toString());
+                if (s != null)
+                    docVisitCountTxtView.setText(s.toString());
             }
         });
         homeViewModel.lastDateVisited.observe(this, new Observer<String>() {
@@ -55,13 +55,15 @@ public class HomeFragment extends Fragment {
         homeViewModel.totalAmount.observe(this, new Observer<Double>() {
             @Override
             public void onChanged(@Nullable Double s) {
-                totalAmountTxtView.setText(s.toString());
+                if (s != null)
+                    totalAmountTxtView.setText(s.toString());
             }
         });
         homeViewModel.selfHealCount.observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(@Nullable Integer s) {
-                selfHealTxtView.setText(s);
+                if (s != null)
+                    selfHealTxtView.setText(s.toString());
             }
         });
         return root;
@@ -71,17 +73,19 @@ public class HomeFragment extends Fragment {
         Cursor data = mdb.getData();
         String lastVisit = "", reason = "";
         Integer docVisitCount = 0, selfHealCount = 0, temp;
-        Double totalAmount = 0.0;
+        Double totalAmount = 0.0, tempAmt = 0.0;
 
         while (data.moveToNext()) {
+            tempAmt = 0.0;
             lastVisit = data.getString(1);
             reason = data.getString(4);
             try {
                 temp = Integer.parseInt(data.getString(3));
-                totalAmount = totalAmount + Double.parseDouble(data.getString(6));
+                tempAmt = data.getDouble(5);
             } catch (NumberFormatException e) {
                 temp = -1;
             }
+            totalAmount = totalAmount + tempAmt;
             if (temp == 0)
                 selfHealCount++;
             else

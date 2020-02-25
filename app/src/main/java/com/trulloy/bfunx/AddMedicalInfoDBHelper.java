@@ -32,7 +32,7 @@ public class AddMedicalInfoDBHelper extends SQLiteOpenHelper {
                 "HealType INTEGER," +
                 "Reason TEXT," +
                 "Medicine TEXT," +
-                "amount REAL" +
+                "Amount REAL" +
                 ")";
         db.execSQL(createTable);
     }
