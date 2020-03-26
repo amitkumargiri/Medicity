@@ -1,4 +1,4 @@
-package com.trulloy.bfunx;
+package com.trulloy.bfunx.dbhelper;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,9 +9,10 @@ import android.util.Log;
 
 public class AddMedicalInfoDBHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "DatabaseHelper";
+    private static final String TAG = "AddMedicalInfoDBHelper";
 
     private static final String TABLE_NAME = "VisitDetails";
+    private static final String COL_SERIAL_NUMBER = "Srno";
     private static final String COL_VISITED_DATE = "VisitedDate";
     private static final String COL_DOCTOR_NAME = "DoctorName";
     private static final String COL_HEAL_TYPE = "HealType";
@@ -26,14 +27,13 @@ public class AddMedicalInfoDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "create table IF NOT EXISTS " + TABLE_NAME + " (" +
-                "Srno INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "VisitedDate TEXT," +
-                "DoctorName TEXT," +
-                "HealType INTEGER," +
-                "Reason TEXT," +
-                "Medicine TEXT," +
-                "Amount REAL" +
-                ")";
+                COL_SERIAL_NUMBER + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COL_VISITED_DATE + " TEXT," +
+                COL_DOCTOR_NAME + " TEXT," +
+                COL_HEAL_TYPE + " INTEGER," +
+                COL_REASON + " TEXT," +
+                COL_MEDICINE + " TEXT," +
+                COL_AMOUNT + " REAL" + ")";
         db.execSQL(createTable);
     }
 
@@ -53,7 +53,7 @@ public class AddMedicalInfoDBHelper extends SQLiteOpenHelper {
         contentValues.put(COL_MEDICINE, medicine);
         contentValues.put(COL_AMOUNT, amount);
 
-        Log.d(TAG, "addData: Adding " + visitedDate + " " + docName + " " + type + " " + medicine + " " + amount);
+        Log.d(TAG, "InsertData: " + visitedDate + " " + docName + " " + type + " " + medicine + " " + amount);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
             return false;
@@ -66,5 +66,10 @@ public class AddMedicalInfoDBHelper extends SQLiteOpenHelper {
         String query = "Select * from " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
         return data;
+    }
+
+    public Integer deleteData(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "Srno = ?", new String[] {id});
     }
 }

@@ -1,4 +1,4 @@
-package com.trulloy.bfunx;
+package com.trulloy.bfunx.ui.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.trulloy.bfunx.R;
+import com.trulloy.bfunx.dbhelper.AddMedicalInfoDBHelper;
 
 public class AddMedicalDataActivity extends AppCompatActivity {
 
@@ -18,7 +21,7 @@ public class AddMedicalDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_medical);
+        setContentView(R.layout.activity_add_medical_data);
         mDbHelper = new AddMedicalInfoDBHelper(this);
 
         dateEdtTxt = findViewById(R.id.dateEdtTxt);

@@ -11,6 +11,12 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/nav_allvisits"
+        android:name="com.trulloy.bfunx.ui.allvisit.AllVisitsFragment"
+        android:label="@string/menu_allvisit"
+        tools:layout="@layout/fragment_allvisit" />
+
     <!--
     <fragment
         android:id="@+id/nav_gallery"

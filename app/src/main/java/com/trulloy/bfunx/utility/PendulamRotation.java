@@ -1,4 +1,4 @@
-package com.trulloy.bfunx;
+package com.trulloy.bfunx.utility;
 
 public class PendulamRotation {
 
