@@ -9,6 +9,9 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_allvisit">All Visits</string>
+    <string name="menu_vaccination">Vaccination</string>
+
+    <string name="save">Save</string>
 
     <string-array name="healtype_arrays">
         <item>Self</item>

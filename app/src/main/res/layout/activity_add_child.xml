@@ -13,97 +13,55 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Number"/>
-
+            android:text="Aadhar Number"/>
         <EditText
-            android:id="@+id/policyNumberEdtTxt"
+            android:id="@+id/aadharEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Policy Number"
+            android:hint="Aadhar Number"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Name"/>
-
         <EditText
-            android:id="@+id/policyNameEdtTxt"
+            android:id="@+id/childNameEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Policy Name"
+            android:hint="Child name"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Person Name"/>
-
+            android:text="Date Of Birth"/>
         <EditText
-            android:id="@+id/personNameEdtTxt"
+            android:id="@+id/dobEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Person Name"
-            android:layout_marginRight="10dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Buy Date"/>
-
-        <EditText
-            android:id="@+id/policyBuyDateEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Policy Buy Date"
-            android:layout_marginRight="10dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Coverage Detail"/>
-
-        <EditText
-            android:id="@+id/policyCoverageDetailEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Policy Coverage Detail (max. 500 chars)"
+            android:hint="Child name"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 
@@ -111,6 +69,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        android:id="@+id/saveHealthPolicy"/>
-
+        android:id="@+id/saveChildBtn"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

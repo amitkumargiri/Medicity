@@ -12,6 +12,10 @@
             android:id="@+id/nav_allvisits"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_allvisit" />
+        <item
+            android:id="@+id/nav_vaccination"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_vaccination" />
     </group>
 
     <!--
