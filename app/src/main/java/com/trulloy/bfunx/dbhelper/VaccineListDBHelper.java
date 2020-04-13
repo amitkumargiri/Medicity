@@ -17,7 +17,6 @@ public class VaccineListDBHelper extends SQLiteOpenHelper {
     private static final String COL_SERIAL_NUMBER = "Srno";
     private static final String COL_AADHAR_NO = "AadharNo";
     private static final String COL_VACCINE_NAME = "VaccineName";
-    private static final String COL_YESNO = "YesNo";
     private static final String COL_DISTRIBUTED_DATE = "DistributeDate";
     private static final String COL_VACCINATED_DATE = "VaccineDate";
 
@@ -31,7 +30,6 @@ public class VaccineListDBHelper extends SQLiteOpenHelper {
                 COL_SERIAL_NUMBER + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COL_AADHAR_NO + " TEXT," +
                 COL_VACCINE_NAME + " TEXT," +
-                COL_YESNO + " TEXT," +
                 COL_VACCINATED_DATE + " TEXT)";
         db.execSQL(createTable);
     }
@@ -42,15 +40,14 @@ public class VaccineListDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String aadharNo, String vaccineName, String yesno, String vaccinatedDate) {
+    public boolean insertData(String aadharNo, String vaccineName, String vaccinatedDate) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_AADHAR_NO, aadharNo);
         contentValues.put(COL_VACCINE_NAME, vaccineName);
-        contentValues.put(COL_YESNO, yesno);
         contentValues.put(COL_VACCINATED_DATE, vaccinatedDate);
 
-        Log.d(TAG, "InsertData: " + aadharNo + " " + vaccineName + " " + yesno + " " + vaccinatedDate);
+        Log.d(TAG, "InsertData: " + aadharNo + " " + vaccineName + " " + vaccinatedDate);
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1) {
             return false;
@@ -58,9 +55,14 @@ public class VaccineListDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public int deleteData(String name) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, COL_VACCINE_NAME + "=?", new String[]{name});
+    }
+
     public Cursor getVaccineData(String childAadharNo) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "Select " + COL_VACCINE_NAME +" from " + TABLE_NAME + " where " + COL_AADHAR_NO + " = " + childAadharNo;
+        String query = "Select " + COL_VACCINE_NAME +" from " + TABLE_NAME + " where " + COL_AADHAR_NO + " = '" + childAadharNo + "'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

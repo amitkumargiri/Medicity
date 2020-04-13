@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -20,6 +21,8 @@ import com.trulloy.bfunx.R;
 import com.trulloy.bfunx.dbhelper.AddChildDetailsDBHelper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class VaccinationFragment extends Fragment {
 
@@ -27,6 +30,7 @@ public class VaccinationFragment extends Fragment {
     private VaccinationViewModel vaccineViewModel;
     private ListView childListView;
     private Button addChildFltBtn;
+    private HashMap<String, String> childs = new HashMap<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         vaccineViewModel = ViewModelProviders.of(this).get(VaccinationViewModel.class);
@@ -39,9 +43,20 @@ public class VaccinationFragment extends Fragment {
                 addChild();
             }
         });
+
+        populateData();
+
+        List<String> list = new ArrayList<>(childs.values());
         childListView = root.findViewById(R.id.childList);
-        ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, populateData());
+        ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
         childListView.setAdapter(adapter);
+        childListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                VaccinationListActivity.childAadharNo = (String) childs.keySet().toArray()[0];
+                openVaccineActivity();
+            }
+        });
         return root;
     }
 
@@ -50,6 +65,9 @@ public class VaccinationFragment extends Fragment {
         startActivityForResult(intent, 1);
     }
 
+    /**
+     * This activity has to be open after the child Aadhar number is set.
+     */
     private void openVaccineActivity() {
         Intent intent = new Intent(getActivity(), VaccinationListActivity.class);
         this.startActivity(intent);
@@ -58,17 +76,19 @@ public class VaccinationFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(1, Activity.RESULT_OK, data);
-        ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, populateData());
+        populateData();
+        List<String> list = new ArrayList<>(childs.values());
+        ListAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
         childListView.setAdapter(adapter);
     }
 
-    private ArrayList<String> populateData() {
+    /**
+     * Populate data in form of (K,V) pair as (Aadhar,Name) from the ChildDetails Table.
+     */
+    private void populateData() {
         Cursor data = mdb.getChildsList();
-        ArrayList<String> childList = new ArrayList<>();
         while (data.moveToNext()) {
-            childList.add(data.getString(0));
+            childs.put(data.getString(0), data.getString(1));
         }
-        vaccineViewModel.setChildList(childList);
-        return childList;
     }
 }

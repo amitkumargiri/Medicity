@@ -54,7 +54,7 @@ public class AddChildDetailsDBHelper extends SQLiteOpenHelper {
 
     public Cursor getChildsList() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "Select " + COL_CHILD_NAME +" from " + TABLE_NAME;
+        String query = "Select " + COL_AADHAR_NO + ", " + COL_CHILD_NAME +" from " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
         return data;
     }

@@ -3,24 +3,33 @@ package com.trulloy.bfunx.ui.vaccination;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.trulloy.bfunx.R;
 import com.trulloy.bfunx.dbhelper.VaccineListDBHelper;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class VaccinationListActivity extends AppCompatActivity {
 
-    public static String childAadharNo;
+    protected static String childAadharNo;
 
     private VaccineListDBHelper mdb;
     private ListView vaccineListView;
-    private Button saveVaccineFltBtn;
+    private Button saveVaccineBtn;
+    private List<String> vaccines = Arrays.asList("Vaccine 1", "Vaccine 2", "Vaccine 3");
+    private List<String> vaccineListTakenByChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +38,39 @@ public class VaccinationListActivity extends AppCompatActivity {
 
         mdb = new VaccineListDBHelper(this);
         vaccineListView = findViewById(R.id.vaccineList);
-        saveVaccineFltBtn = findViewById(R.id.saveVaccineFltBtn);
+        saveVaccineBtn = findViewById(R.id.saveVaccineBtn);
         vaccineListView = findViewById(R.id.vaccineList);
-        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, populateData());
-        vaccineListView.setAdapter(adapter);
+        vaccineListTakenByChild = populateData();
+        vaccineListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        vaccineListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, vaccines){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View row = super.getView(position, convertView, parent);
+                if(vaccineListTakenByChild.contains(getItem(position))) {
+                    vaccineListView.setItemChecked(position,true);
+                    row.setBackgroundColor (Color.RED); // some color // do something change color
+                } else {
+                    row.setBackgroundColor (Color.GREEN); // // default state and default color
+                }
+                return row;
+            }
+        });
 
+
+        saveVaccineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SparseBooleanArray checkedVaccines = vaccineListView.getCheckedItemPositions();
+                for (int i=0; i<vaccines.size(); i++) {
+                    if (!vaccineListTakenByChild.contains(vaccines.get(i)) && checkedVaccines.get(i)) {
+                        mdb.insertData(childAadharNo, vaccines.get(i), "Today");
+                    } else if (!checkedVaccines.get(i) && vaccineListTakenByChild.contains(vaccines.get(i)) ) {
+                        mdb.deleteData(vaccines.get(i));
+                    }
+                }
+                finish();
+            }
+        });
     }
 
     private ArrayList<String> populateData() {
