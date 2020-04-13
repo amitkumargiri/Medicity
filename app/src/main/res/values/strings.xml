@@ -10,6 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_allvisit">All Visits</string>
     <string name="menu_vaccination">Vaccination</string>
+    <string name="menu_childplan">Child Plan</string>
 
     <string name="save">Save</string>
 
@@ -18,4 +19,7 @@
         <item>Doctor</item>
     </string-array>
     <string name="title_activity_add_health_policy">AddHealthPolicy</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

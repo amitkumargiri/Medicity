@@ -23,6 +23,12 @@
         android:label="@string/menu_vaccination"
         tools:layout="@layout/fragment_vaccination" />
 
+    <fragment
+        android:id="@+id/nav_childplan"
+        android:name="com.trulloy.bfunx.ui.childplan.ChildPlanFragment"
+        android:label="@string/menu_vaccination"
+        tools:layout="@layout/fragment_vaccination" />
+
     <!--
     <fragment
         android:id="@+id/nav_slideshow"

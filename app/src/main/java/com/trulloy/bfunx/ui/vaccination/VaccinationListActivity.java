@@ -56,7 +56,6 @@ public class VaccinationListActivity extends AppCompatActivity {
             }
         });
 
-
         saveVaccineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
