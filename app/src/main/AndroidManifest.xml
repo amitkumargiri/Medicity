@@ -24,4 +24,5 @@
         <activity android:name=".ui.home.HealthPolicyActivity" />
     </application>
 
+
 </manifest>
