@@ -14,6 +14,7 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
     private static final String COL_SERIAL_NUMBER = "Srno";
     private static final String COL_POLICY_NUMBER = "PolicyNumber";
     private static final String COL_POLICY_NAME = "PolicyName";
+    private static final String COL_POLICY_AMOUNT = "PolicyAmount";
     private static final String COL_PERSON_NAME = "PersonName";
     private static final String COL_POLICY_BUY_DATE = "PolicyBuyDate";
     private static final String COL_POLICY_RENEWED_DATE = "PolicyRenewedDate";
@@ -31,6 +32,7 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
                 COL_POLICY_NUMBER + " TEXT," +
                 COL_POLICY_NAME + " TEXT," +
                 COL_PERSON_NAME + " TEXT," +
+                COL_POLICY_AMOUNT + " REAL," +
                 COL_POLICY_BUY_DATE + " TEXT," +
                 COL_POLICY_RENEWED_DATE + " TEXT," +
                 COL_POLICY_NEXT_RENEWED_DATE + " TEXT," +
@@ -44,11 +46,12 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String policyNumber, String policyName, String personName, String buyDate, String coverage) {
+    public boolean insertData(String policyNumber, String policyName, double policyAmount, String personName, String buyDate, String coverage) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_POLICY_NUMBER, policyNumber);
         contentValues.put(COL_POLICY_NAME, policyName);
+        contentValues.put(COL_POLICY_NAME, policyAmount);
         contentValues.put(COL_PERSON_NAME, personName);
         contentValues.put(COL_POLICY_BUY_DATE, buyDate);
         contentValues.put(COL_POLICY_COVERAGE, coverage);
@@ -65,5 +68,10 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
         String query = "Select " + COL_POLICY_NUMBER + ", " + COL_POLICY_NEXT_RENEWED_DATE +  " from " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
         return data;
+    }
+
+    public int deletePolicy(String policyNumber) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, COL_POLICY_NUMBER + "=?", new String[]{policyNumber});
     }
 }

@@ -33,19 +33,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Name"/>
-
         <EditText
             android:id="@+id/policyNameEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Policy Name"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Renew Amount"/>
+        <EditText
+            android:id="@+id/policyAmountEdtTxt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Policy Amount"
+            android:inputType="number"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 

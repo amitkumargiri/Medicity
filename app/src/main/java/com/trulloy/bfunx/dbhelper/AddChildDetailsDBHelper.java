@@ -58,4 +58,9 @@ public class AddChildDetailsDBHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
+    public int deleteChild(String aadhar) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, COL_AADHAR_NO + "=?", new String[]{aadhar});
+    }
 }

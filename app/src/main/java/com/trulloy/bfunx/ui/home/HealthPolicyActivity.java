@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.trulloy.bfunx.R;
 import com.trulloy.bfunx.dbhelper.HealthPolicyDBHelper;
-import com.trulloy.bfunx.utility.UtilityFunction;
 
 import java.util.ArrayList;
 
@@ -45,7 +44,6 @@ public class HealthPolicyActivity extends AppCompatActivity {
         }
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         healthPoliciesList.setAdapter(adapter);
-
     }
 
     private void startAddHealthPolicyActivity() {

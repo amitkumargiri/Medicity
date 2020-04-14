@@ -60,6 +60,11 @@ public class VaccineListDBHelper extends SQLiteOpenHelper {
         return db.delete(TABLE_NAME, COL_VACCINE_NAME + "=?", new String[]{name});
     }
 
+    public int deleteDataByAdhar(String aadhar) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, COL_AADHAR_NO + "=?", new String[]{aadhar});
+    }
+
     public Cursor getVaccineData(String childAadharNo) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "Select " + COL_VACCINE_NAME +" from " + TABLE_NAME + " where " + COL_AADHAR_NO + " = '" + childAadharNo + "'";

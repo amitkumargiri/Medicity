@@ -11,13 +11,20 @@
     <string name="menu_allvisit">All Visits</string>
     <string name="menu_vaccination">Vaccination</string>
     <string name="menu_childplan">Child Plan</string>
+    <string name="menu_deletedata">Delete Data</string>
 
     <string name="save">Save</string>
+    <string name="delete">Delete</string>
 
     <string-array name="healtype_arrays">
         <item>Self</item>
         <item>Doctor</item>
     </string-array>
+    <string-array name="datatype_arrays">
+        <item>Health Policy</item>
+        <item>Child Data</item>
+    </string-array>
+
     <string name="title_activity_add_health_policy">AddHealthPolicy</string>
 
     <!-- TODO: Remove or change this placeholder text -->

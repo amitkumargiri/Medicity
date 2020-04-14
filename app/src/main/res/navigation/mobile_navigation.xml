@@ -29,6 +29,12 @@
         android:label="@string/menu_vaccination"
         tools:layout="@layout/fragment_vaccination" />
 
+    <fragment
+        android:id="@+id/nav_deletedata"
+        android:name="com.trulloy.bfunx.ui.deletedata.DeleteDataFragment"
+        android:label="@string/menu_deletedata"
+        tools:layout="@layout/fragment_delete_data" />
+
     <!--
     <fragment
         android:id="@+id/nav_slideshow"

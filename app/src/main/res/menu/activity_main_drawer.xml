@@ -20,6 +20,10 @@
             android:id="@+id/nav_childplan"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_childplan" />
+        <item
+            android:id="@+id/nav_deletedata"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_deletedata" />
     </group>
 
     <!--
