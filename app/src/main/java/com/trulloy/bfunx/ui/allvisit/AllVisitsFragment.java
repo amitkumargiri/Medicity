@@ -16,13 +16,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.trulloy.bfunx.R;
-import com.trulloy.bfunx.dbhelper.AddMedicalInfoDBHelper;
+import com.trulloy.bfunx.dbhelper.MedicalInfoDBHelper;
 
 import java.util.ArrayList;
 
 public class AllVisitsFragment extends Fragment {
 
-    private AddMedicalInfoDBHelper mdb;
+    private MedicalInfoDBHelper mdb;
     private ListView mListView;
     private Button refreshBtn, deleteBtn;
     private EditText srnoEdtTxt;
@@ -45,7 +45,7 @@ public class AllVisitsFragment extends Fragment {
                 deleteData();
             }
         });
-        mdb = new AddMedicalInfoDBHelper(getActivity());
+        mdb = new MedicalInfoDBHelper(getActivity());
 
         populateListView();
         return root;

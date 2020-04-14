@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.trulloy.bfunx.R;
-import com.trulloy.bfunx.dbhelper.AddChildDetailsDBHelper;
+import com.trulloy.bfunx.dbhelper.ChildDetailsDBHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class VaccinationFragment extends Fragment {
 
-    private AddChildDetailsDBHelper mdb;
+    private ChildDetailsDBHelper mdb;
     private VaccinationViewModel vaccineViewModel;
     private ListView childListView;
     private Button addChildFltBtn;
@@ -35,7 +35,7 @@ public class VaccinationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         vaccineViewModel = ViewModelProviders.of(this).get(VaccinationViewModel.class);
         View root = inflater.inflate(R.layout.fragment_vaccination, container, false);
-        mdb = new AddChildDetailsDBHelper(getActivity());
+        mdb = new ChildDetailsDBHelper(getActivity());
         addChildFltBtn = root.findViewById(R.id.addChildFltBtn);
         addChildFltBtn.setOnClickListener(new View.OnClickListener() {
             @Override

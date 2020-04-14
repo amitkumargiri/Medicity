@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.trulloy.bfunx.R;
-import com.trulloy.bfunx.dbhelper.AddChildDetailsDBHelper;
+import com.trulloy.bfunx.dbhelper.ChildDetailsDBHelper;
 import com.trulloy.bfunx.dbhelper.HealthPolicyDBHelper;
 import com.trulloy.bfunx.dbhelper.VaccineListDBHelper;
 
@@ -67,7 +67,7 @@ public class DeleteDataFragment extends Fragment {
                     } else {
                         // 1 means child vaccination data
                         String aadhar = dataEdtTxt.getText().toString();
-                        AddChildDetailsDBHelper db = new AddChildDetailsDBHelper(getContext());
+                        ChildDetailsDBHelper db = new ChildDetailsDBHelper(getContext());
                         db.deleteChild(aadhar);
                         VaccineListDBHelper vdb = new VaccineListDBHelper(getContext());
                         vdb.deleteDataByAdhar(aadhar);

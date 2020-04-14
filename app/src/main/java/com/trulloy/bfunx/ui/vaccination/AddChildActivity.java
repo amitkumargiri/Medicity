@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.trulloy.bfunx.R;
-import com.trulloy.bfunx.dbhelper.AddChildDetailsDBHelper;
+import com.trulloy.bfunx.dbhelper.ChildDetailsDBHelper;
 
 public class AddChildActivity extends AppCompatActivity {
 
-    private AddChildDetailsDBHelper mdb;
+    private ChildDetailsDBHelper mdb;
     private Button saveChildBtn;
     private EditText aadharEdtTxt, childNameEdtTxt, dobEdtTxt;
 
@@ -20,7 +20,7 @@ public class AddChildActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_child);
-        mdb = new AddChildDetailsDBHelper(this);
+        mdb = new ChildDetailsDBHelper(this);
         saveChildBtn = findViewById(R.id.saveChildBtn);
         aadharEdtTxt = findViewById(R.id.aadharEdtTxt);
         childNameEdtTxt = findViewById(R.id.childNameEdtTxt);

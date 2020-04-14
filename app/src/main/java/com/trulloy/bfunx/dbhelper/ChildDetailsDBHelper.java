@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class AddChildDetailsDBHelper extends SQLiteOpenHelper {
+public class ChildDetailsDBHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "AddChildDetailsDBHelper";
+    private static final String TAG = "ChildDetailsDBHelper";
 
     private static final String TABLE_NAME = "ChildDetails";
     private static final String COL_SERIAL_NUMBER = "Srno";
@@ -17,7 +17,7 @@ public class AddChildDetailsDBHelper extends SQLiteOpenHelper {
     private static final String COL_CHILD_NAME = "Name";
     private static final String COL_DOB = "dob";
 
-    public AddChildDetailsDBHelper(Context context) {
+    public ChildDetailsDBHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
 

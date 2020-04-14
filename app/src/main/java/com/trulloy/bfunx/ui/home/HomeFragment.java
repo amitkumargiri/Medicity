@@ -15,12 +15,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.trulloy.bfunx.dbhelper.AddMedicalInfoDBHelper;
+import com.trulloy.bfunx.dbhelper.MedicalInfoDBHelper;
 import com.trulloy.bfunx.R;
 
 public class HomeFragment extends Fragment {
 
-    private AddMedicalInfoDBHelper mdb;
+    private MedicalInfoDBHelper mdb;
     private HomeViewModel homeViewModel;
     private Button healthPoliciesBtn;
     private TextView docVisitCountTxtView, lastVisitedTxtView, reasonTxtView, totalAmountTxtView, selfHealTxtView;
@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        mdb = new AddMedicalInfoDBHelper(getActivity());
+        mdb = new MedicalInfoDBHelper(getActivity());
 
         healthPoliciesBtn = root.findViewById(R.id.healthPoliciesBtn);
         healthPoliciesBtn.setOnClickListener(new View.OnClickListener() {

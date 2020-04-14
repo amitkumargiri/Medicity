@@ -9,11 +9,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.trulloy.bfunx.R;
-import com.trulloy.bfunx.dbhelper.AddMedicalInfoDBHelper;
+import com.trulloy.bfunx.dbhelper.MedicalInfoDBHelper;
 
 public class AddMedicalDataActivity extends AppCompatActivity {
 
-    private AddMedicalInfoDBHelper mDbHelper;
+    private MedicalInfoDBHelper mDbHelper;
     private Button saveBtn;
     private EditText dateEdtTxt, docNameEdtTxt, medicineEdtTxt, amountEdtText, reasonEdtTxt;
     private Spinner healTypeSpn;
@@ -22,7 +22,7 @@ public class AddMedicalDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medical_data);
-        mDbHelper = new AddMedicalInfoDBHelper(this);
+        mDbHelper = new MedicalInfoDBHelper(this);
 
         dateEdtTxt = findViewById(R.id.dateEdtTxt);
         docNameEdtTxt = findViewById(R.id.docnameEdtTxt);
