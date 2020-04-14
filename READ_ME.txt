@@ -6,3 +6,6 @@ Task:
 5. Add error dialog box in case of any error occurs.
 6. Make the aadhar no column with constarint unique and not null.
 7. Implement confirm dialog box for deleting the item.
+
+Coronavirus cases -
+https://api.covid19india.org/data.json

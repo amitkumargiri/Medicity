@@ -1,5 +1,6 @@
 package com.trulloy.bfunx.ui.childplan;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,7 +30,7 @@ public class ChildPlanFragment extends Fragment {
     TextView answerTxtView;
     ImageView answerImage;
     String answer;
-    Button closeBtn, predictBtn;
+    Button predictBtn;
     DatePickerDialog datePicker;
     EditText dateEdtText;
 
@@ -37,19 +38,9 @@ public class ChildPlanFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_child_plan, container, false);
-
-        closeBtn = root.findViewById(R.id.closeBtn);
-        closeBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-                System.exit(0);
-            }
-        });
 
         dateEdtText = root.findViewById(R.id.dateEdtTxt);
         dateEdtText.setInputType(InputType.TYPE_NULL);
@@ -86,7 +77,11 @@ public class ChildPlanFragment extends Fragment {
                     age = Integer.parseInt(ageEdTxt.getText().toString());
                 } catch (NumberFormatException e) {
                     age = 0;
-                    // TODO - throw error and show dialog box
+                    AlertDialog alert = new AlertDialog.Builder(getContext()).create();
+                    alert.setTitle("Error:");
+                    alert.setMessage("You have entered wrong age. Closing this application forcefully.");
+                    alert.show();
+                    getActivity().onBackPressed();
                 }
 
                 int month = -1;
@@ -115,6 +110,10 @@ public class ChildPlanFragment extends Fragment {
             }
         });
 
+        AlertDialog alert = new AlertDialog.Builder(getContext()).create();
+        alert.setTitle("Notice:");
+        alert.setMessage("This is only for fun and entertainment only. Please enter the month on which you had sex and required female details only.");
+        alert.show();
         return root;
     }
 
