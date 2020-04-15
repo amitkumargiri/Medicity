@@ -9,3 +9,7 @@ Task:
 
 Coronavirus cases -
 https://api.covid19india.org/data.json
+
+Commands:
+
+git status | grep app | cut -f2 -d":" | sed 's/ //g' |  perl -ne 'print "./$_"' | xargs -I '{}' cp '{}' ./temp/

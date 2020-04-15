@@ -5,6 +5,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
+    android:background="#8ABAAE"
     android:gravity="top">
 
     <LinearLayout
@@ -85,10 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Predict"
-            android:textStyle="bold"
-            android:background="@android:color/holo_green_light"
-            android:typeface="serif"/>
+            android:text="Predict"/>
     </LinearLayout>
 
     <LinearLayout

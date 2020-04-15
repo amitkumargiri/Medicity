@@ -16,5 +16,6 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:id="@+id/healthPoliciesList" />
 </androidx.appcompat.widget.LinearLayoutCompat>

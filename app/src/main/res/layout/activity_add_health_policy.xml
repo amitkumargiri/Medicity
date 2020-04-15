@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:orientation="vertical"
+    android:background="#8ABAAE"
     tools:context=".ui.home.AddHealthPolicyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Number"/>
 
         <EditText
@@ -25,18 +27,21 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Policy Number"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"
+            android:hint="Policy Number"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Name"/>
         <EditText
             android:id="@+id/policyNameEdtTxt"
@@ -44,37 +49,43 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Policy Name"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Renew Amount"/>
         <EditText
             android:id="@+id/policyAmountEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:background="@drawable/text_bg"
             android:hint="Policy Amount"
-            android:inputType="number"
-            android:layout_marginRight="10dp"/>
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Person Name"/>
 
         <EditText
@@ -82,18 +93,21 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Person Name"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"
+            android:hint="Person Name"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Buy Date"/>
 
         <EditText
@@ -101,33 +115,38 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Policy Buy Date"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"
+            android:hint="Policy Buy Date"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Coverage Detail"/>
 
         <EditText
             android:id="@+id/policyCoverageDetailEdtTxt"
             android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
             android:ems="10"
-            android:hint="Policy Coverage Detail (max. 500 chars)"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"
+            android:hint="Policy Coverage Detail (max. 500 chars)"/>
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:id="@+id/saveHealthPolicy"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

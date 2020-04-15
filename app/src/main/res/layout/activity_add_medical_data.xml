@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:background="#8ABAAE"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,59 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Visited Date"/>
-
-        <EditText
-            android:id="@+id/dateEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Date"
-            android:layout_marginRight="10dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Doctor's Name"/>
-
-        <EditText
-            android:id="@+id/docnameEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginRight="10dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Type"/>
 
         <Spinner
             android:id="@+id/healTypeSpn"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:entries="@array/healtype_arrays"/>
 
@@ -73,34 +33,89 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Reason"/>
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:text="Visited Date"/>
 
         <EditText
-            android:id="@+id/reasonEdtTxt"
+            android:id="@+id/dateEdtTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:layout_marginRight="10dp"/>
+            android:hint="Enter Date"
+            android:background="@drawable/text_bg"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:text="Doctor's Name"/>
+
+        <EditText
+            android:id="@+id/docnameEdtTxt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Doctor's Name"
+            android:background="@drawable/text_bg"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:text="Reason"/>
+
+        <EditText
+            android:id="@+id/reasonEdtTxt"
+            android:layout_width="250dp"
+            android:layout_height="120dp"
+            android:ems="10"
+            android:hint="Why You Visited"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:background="@drawable/text_bg"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Medicines Taken"/>
 
         <EditText
@@ -108,20 +123,24 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Medicines Name"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_bg"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
             android:text="Amount"/>
 
         <EditText
@@ -129,15 +148,17 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:layout_marginRight="10dp"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:hint=" Spent Amount"
+            android:background="@drawable/text_bg"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
         <Button
             android:id="@+id/saveBtn"
@@ -146,10 +167,7 @@
             android:layout_weight="1"
             android:text="Save"
             android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:textStyle="bold"
-            android:background="@android:color/darker_gray"
-            android:typeface="serif"/>
+            android:layout_marginLeft="100dp"/>
 
     </LinearLayout>
 

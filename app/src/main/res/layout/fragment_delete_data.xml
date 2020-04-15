@@ -5,26 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:layout_margin="5dp">
+    android:background="#8ABAAE"
+    tools:context=".MainActivity">
 
     <Spinner
         android:id="@+id/dataTypeSpn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:entries="@array/datatype_arrays"/>
-    <TextView
-        android:id="@+id/displayTxtView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enter policy number" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/dataEdtTxt" />
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/dataEdtTxt"
+        android:hint=""/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/delete"
+        android:layout_gravity="center"
         android:id="@+id/deleteBtn" />
 </androidx.appcompat.widget.LinearLayoutCompat>

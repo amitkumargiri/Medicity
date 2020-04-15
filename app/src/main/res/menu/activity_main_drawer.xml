@@ -10,19 +10,19 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_allvisits"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_allvisits"
             android:title="@string/menu_allvisit" />
         <item
             android:id="@+id/nav_vaccination"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_vaccine"
             android:title="@string/menu_vaccination" />
         <item
             android:id="@+id/nav_childplan"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_child"
             android:title="@string/menu_childplan" />
         <item
             android:id="@+id/nav_deletedata"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/ic_delete"
             android:title="@string/menu_deletedata" />
     </group>
 
