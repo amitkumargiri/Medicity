@@ -13,3 +13,13 @@ https://api.covid19india.org/data.json
 Commands:
 
 git status | grep app | cut -f2 -d":" | sed 's/ //g' |  perl -ne 'print "./$_"' | xargs -I '{}' cp '{}' ./temp/
+
+
+
+Version 4.0
+===========
+What's new in this release?
+- Add medical visit and track your expenses
+- Implemented new user interface
+- Track your child vaccination
+- Track your health policies
