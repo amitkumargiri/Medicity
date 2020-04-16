@@ -53,7 +53,7 @@ public class VaccinationFragment extends Fragment {
         childListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                VaccinationListActivity.childAadharNo = (String) childs.keySet().toArray()[0];
+                VaccinationListActivity.childAadharNo = (String) childs.keySet().toArray()[position];
                 openVaccineActivity();
             }
         });

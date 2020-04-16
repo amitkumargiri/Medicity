@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -36,14 +37,23 @@ public class HealthPolicyActivity extends AppCompatActivity {
 
         healthPoliciesList = findViewById(R.id.healthPoliciesList);
         mdb = new HealthPolicyDBHelper(this);
-        Cursor data = mdb.getPolicyListData();
+        Cursor data = mdb.getPolicyNumberListData();
         ArrayList<String> list = new ArrayList<>();
 
         while (data.moveToNext()) {
-            list.add(data.getString(0) + "," + data.getString(1));
+            list.add(data.getString(0));
         }
+
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         healthPoliciesList.setAdapter(adapter);
+
+        healthPoliciesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HealthPolicyDetailsActivity.HEALTH_POLICY_NUMBER = (String) healthPoliciesList.getItemAtPosition(position);
+                openHealthPolicyDetailsActivity();
+            }
+        });
     }
 
     private void startAddHealthPolicyActivity() {
@@ -51,5 +61,8 @@ public class HealthPolicyActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    private void openHealthPolicyDetailsActivity() {
+        Intent intent = new Intent(this, HealthPolicyDetailsActivity.class);
+        startActivity(intent);
+    }
 }

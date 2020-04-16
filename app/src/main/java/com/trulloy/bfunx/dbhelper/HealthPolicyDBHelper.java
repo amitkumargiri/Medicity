@@ -51,7 +51,7 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_POLICY_NUMBER, policyNumber);
         contentValues.put(COL_POLICY_NAME, policyName);
-        contentValues.put(COL_POLICY_NAME, policyAmount);
+        contentValues.put(COL_POLICY_AMOUNT, policyAmount);
         contentValues.put(COL_PERSON_NAME, personName);
         contentValues.put(COL_POLICY_BUY_DATE, buyDate);
         contentValues.put(COL_POLICY_COVERAGE, coverage);
@@ -63,9 +63,24 @@ public class HealthPolicyDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public Cursor getPolicyListData() {
+    public Cursor getPolicyNumberListData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "Select " + COL_POLICY_NUMBER + ", " + COL_POLICY_NEXT_RENEWED_DATE +  " from " + TABLE_NAME;
+        String query = "Select " + COL_POLICY_NUMBER +  " from " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public Cursor getPolicyData(String policyNumber) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "Select " +
+                COL_POLICY_NUMBER   + ", " +
+                COL_POLICY_NAME     + ", " +
+                COL_POLICY_AMOUNT   + ", " +
+                COL_PERSON_NAME     + ", " +
+                COL_POLICY_BUY_DATE + ", " +
+                COL_POLICY_COVERAGE +
+                " from " + TABLE_NAME + " where " +
+                COL_POLICY_NUMBER + " ='"+ policyNumber +"'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

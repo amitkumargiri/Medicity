@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.vaccination.VaccinationListActivity"></activity>
+
+        <!-- Admob Implementation meta-data
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-0831245823768099~8986654724"/> -->
+
+        <activity android:name=".ui.home.HealthPolicyDetailsActivity"></activity>
+        <activity android:name=".ui.vaccination.VaccinationListActivity" />
         <activity android:name=".ui.vaccination.AddChildActivity" />
         <activity android:name=".ui.home.AddHealthPolicyActivity" />
         <activity android:name=".ui.home.AddMedicalDataActivity" />
@@ -18,11 +25,11 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.home.HealthPolicyActivity" />
     </application>
-
 
 </manifest>

@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8ABAAE"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="#8ABAAE"
+    tools:context=".ui.home.AddMedicalDataActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
 
         <Spinner
             android:id="@+id/healTypeSpn"
-            android:layout_width="250dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/healtype_arrays"/>
 
@@ -78,6 +78,8 @@
 
     </LinearLayout>
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,9 +100,9 @@
             android:layout_height="120dp"
             android:ems="10"
             android:hint="Why You Visited"
+            android:background="@drawable/text_bg"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:background="@drawable/text_bg"/>
+            android:inputType="textMultiLine" />
 
     </LinearLayout>
 
@@ -123,8 +125,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Medicines Name"
             android:gravity="start|top"
+            android:hint="Medicines Name"
             android:inputType="textMultiLine"
             android:background="@drawable/text_bg"/>
     </LinearLayout>
@@ -148,9 +150,9 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:hint=" Spent Amount"
-            android:background="@drawable/text_bg"/>
+            android:background="@drawable/text_bg"
+            android:hint="Spent Amount"
+            android:inputType="number"/>
 
     </LinearLayout>
 

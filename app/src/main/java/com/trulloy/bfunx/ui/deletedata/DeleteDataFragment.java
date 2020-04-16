@@ -24,7 +24,6 @@ import com.trulloy.bfunx.dbhelper.VaccineListDBHelper;
  */
 public class DeleteDataFragment extends Fragment {
 
-    private TextView displayTxtView;
     private Spinner dataTypeSpn;
     private EditText dataEdtTxt;
     private Button deleteBtn;
@@ -35,7 +34,6 @@ public class DeleteDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_delete_data, container, false);
         dataTypeSpn = root.findViewById(R.id.dataTypeSpn);
-        displayTxtView = root.findViewById(R.id.displayTxtView);
         dataEdtTxt = root.findViewById(R.id.dataEdtTxt);
         deleteBtn = root.findViewById(R.id.deleteBtn);
 
@@ -43,15 +41,15 @@ public class DeleteDataFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0) {
-                    displayTxtView.setText("Policy Number");
+                    dataEdtTxt.setHint("Policy Number");
                 } else {
-                    displayTxtView.setText("Aadhar Number"); // 1 means child vaccination data
+                    dataEdtTxt.setHint("Aadhar Number"); // 1 means child vaccination data
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                displayTxtView.setText("Policy Number");
+                dataEdtTxt.setHint("Policy Number");
             }
         });
 
