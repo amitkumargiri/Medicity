@@ -60,6 +60,8 @@ public class ChildPlanFragment extends Fragment {
                             }
                         }, year, month, day);
                 datePicker.show();
+                datePicker.getButton(DatePickerDialog.BUTTON_NEGATIVE).setTextColor(Color.parseColor("#2B3B37"));
+                datePicker.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#2B3B37"));
             }
         });
 

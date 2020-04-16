@@ -123,7 +123,6 @@
             android:background="@android:color/white"/>
     </LinearLayout>
 
-    <!--
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -134,5 +133,4 @@
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-0831245823768099/3103772651">
     </com.google.android.gms.ads.AdView>
-    -->
 </android.widget.LinearLayout>

@@ -4,12 +4,7 @@
     android:background="#8ABAAE"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/refreshBtn"
-        android:layout_margin="10dp"
-        android:text="Refresh"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +23,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:hint="Row number"
             android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refreshBtn"
+        android:text="Refresh"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:text="Please refresh to see latest"/>
 
     </LinearLayout>
 

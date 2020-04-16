@@ -48,9 +48,9 @@ public class VaccinationListActivity extends AppCompatActivity {
                 View row = super.getView(position, convertView, parent);
                 if(vaccineListTakenByChild.contains(getItem(position))) {
                     vaccineListView.setItemChecked(position,true);
-                    row.setBackgroundColor (Color.RED); // some color // do something change color
+                    row.setBackgroundColor (Color.GRAY); // some color // do something change color
                 } else {
-                    row.setBackgroundColor (Color.GREEN); // // default state and default color
+                    row.setBackgroundColor (Color.TRANSPARENT); // // default state and default color
                 }
                 return row;
             }
