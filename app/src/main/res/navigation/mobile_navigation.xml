@@ -47,13 +47,13 @@
         android:name="com.trulloy.navigationdrawertutorial.ui.tools.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
-
+-->
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.trulloy.navigationdrawertutorial.ui.share.ShareFragment"
+        android:name="com.trulloy.bfunx.ui.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
-
+<!--
     <fragment
         android:id="@+id/nav_send"
         android:name="com.trulloy.navigationdrawertutorial.ui.send.SendFragment"

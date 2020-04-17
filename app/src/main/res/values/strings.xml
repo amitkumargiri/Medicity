@@ -12,6 +12,7 @@
     <string name="menu_vaccination">Vaccination</string>
     <string name="menu_childplan">Child Plan</string>
     <string name="menu_deletedata">Delete Data</string>
+    <string name="menu_share">Share</string>
 
     <string name="save">Save</string>
     <string name="delete">Delete</string>
@@ -25,8 +26,5 @@
         <item>Child Data</item>
     </string-array>
 
-    <string name="title_activity_add_health_policy">AddHealthPolicy</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_health_policy">Add Health Policy</string>
 </resources>
