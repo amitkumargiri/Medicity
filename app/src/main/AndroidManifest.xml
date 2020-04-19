@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.trulloy.bfunx">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -8,18 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".service.CovidTrackerJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.CovidTracker"
+            android:enabled="true"
+            android:exported="true" />
 
         <!-- Admob Implementation meta-data -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-0831245823768099~8986654724"/>
+            android:value="ca-app-pub-0831245823768099~4712206095" />
 
-        <activity android:name=".ui.home.HealthPolicyDetailsActivity"></activity>
+        <activity android:name=".ui.home.HealthPolicyDetailsActivity" />
         <activity android:name=".ui.vaccination.VaccinationListActivity" />
         <activity android:name=".ui.vaccination.AddChildActivity" />
         <activity android:name=".ui.home.AddHealthPolicyActivity" />
         <activity android:name=".ui.home.AddMedicalDataActivity" />
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

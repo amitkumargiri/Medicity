@@ -125,12 +125,12 @@
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
+        android:id="@+id/bannerAdView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-0831245823768099/3103772651">
+        ads:adUnitId="ca-app-pub-0831245823768099/5528138904">
     </com.google.android.gms.ads.AdView>
 </android.widget.LinearLayout>

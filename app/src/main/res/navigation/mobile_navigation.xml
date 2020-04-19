@@ -35,6 +35,12 @@
         android:label="@string/menu_deletedata"
         tools:layout="@layout/fragment_delete_data" />
 
+    <fragment
+        android:id="@+id/nav_covid19"
+        android:name="com.trulloy.bfunx.ui.covid19.Covid19Fragment"
+        android:label="@string/menu_covid19"
+        tools:layout="@layout/fragment_covid19" />
+
     <!--
     <fragment
         android:id="@+id/nav_slideshow"
