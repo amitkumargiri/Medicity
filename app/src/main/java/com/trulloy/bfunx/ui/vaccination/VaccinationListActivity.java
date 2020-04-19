@@ -12,13 +12,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.trulloy.bfunx.R;
 import com.trulloy.bfunx.dbhelper.VaccineListDBHelper;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class VaccinationListActivity extends AppCompatActivity {
@@ -28,7 +26,7 @@ public class VaccinationListActivity extends AppCompatActivity {
     private VaccineListDBHelper mdb;
     private ListView vaccineListView;
     private Button saveVaccineBtn;
-    private List<String> vaccines = Arrays.asList("Vaccine 1", "Vaccine 2", "Vaccine 3");
+    private List<String> vaccines = VaccinationName.VACCINES;
     private List<String> vaccineListTakenByChild;
 
     @Override
@@ -37,9 +35,8 @@ public class VaccinationListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vaccination_list);
 
         mdb = new VaccineListDBHelper(this);
-        vaccineListView = findViewById(R.id.vaccineList);
         saveVaccineBtn = findViewById(R.id.saveVaccineBtn);
-        vaccineListView = findViewById(R.id.vaccineList);
+        vaccineListView = findViewById(R.id.birthVaccineList);
         vaccineListTakenByChild = populateData();
         vaccineListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         vaccineListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, vaccines){
