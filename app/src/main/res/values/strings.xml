@@ -12,6 +12,7 @@
     <string name="menu_vaccination">Vaccination</string>
     <string name="menu_childplan">Child Plan</string>
     <string name="menu_deletedata">Delete Data</string>
+    <string name="menu_covid19">Covid-19</string>
 
     <string name="save">Save</string>
     <string name="delete">Delete</string>

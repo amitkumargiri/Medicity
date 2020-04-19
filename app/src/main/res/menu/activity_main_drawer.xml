@@ -24,6 +24,10 @@
             android:id="@+id/nav_deletedata"
             android:icon="@drawable/ic_delete"
             android:title="@string/menu_deletedata" />
+        <item
+            android:id="@+id/nav_covid19"
+            android:icon="@drawable/ic_delete"
+            android:title="@string/menu_covid19" />
     </group>
 
     <!--

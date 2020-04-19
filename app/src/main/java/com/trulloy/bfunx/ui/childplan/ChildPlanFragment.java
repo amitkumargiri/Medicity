@@ -1,5 +1,6 @@
 package com.trulloy.bfunx.ui.childplan;
 
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
@@ -17,6 +18,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.trulloy.bfunx.R;
 import com.trulloy.bfunx.utility.PendulamRotation;
 
@@ -27,16 +30,15 @@ import java.util.Calendar;
  */
 public class ChildPlanFragment extends Fragment {
 
-    TextView answerTxtView;
-    ImageView answerImage;
-    String answer;
-    Button predictBtn;
-    DatePickerDialog datePicker;
-    EditText dateEdtText;
+    private TextView answerTxtView;
+    private ImageView answerImage;
+    private String answer;
+    private Button predictBtn;
+    private DatePickerDialog datePicker;
+    private EditText dateEdtText;
+    private AdView mAdView;
 
-    public ChildPlanFragment() {
-        // Required empty public constructor
-    }
+    public ChildPlanFragment() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -111,6 +113,9 @@ public class ChildPlanFragment extends Fragment {
                 answerTxtView.setText(answer);
             }
         });
+        mAdView = root.findViewById(R.id.bannerAdView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         AlertDialog alert = new AlertDialog.Builder(getContext()).create();
         alert.setTitle("Notice:");
@@ -118,5 +123,4 @@ public class ChildPlanFragment extends Fragment {
         alert.show();
         return root;
     }
-
 }
