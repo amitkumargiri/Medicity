@@ -1,0 +1,27 @@
+{
+  "country": "some",
+  "states":[{
+    "state":"s1",
+    "confirmed":1233,
+    "recovered":23,
+    "deceased":10
+  },
+    {
+      "state":"s2",
+      "confirmed":1233,
+      "recovered":23,
+      "deceased":10
+    },
+    {
+      "state":"s3",
+      "confirmed":1233,
+      "recovered":23,
+      "deceased":10
+    },
+    {
+      "state":"s4",
+      "confirmed":1233,
+      "recovered":23,
+      "deceased":10
+    }]
+}

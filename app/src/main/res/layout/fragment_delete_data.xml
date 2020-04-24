@@ -25,7 +25,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/delete"
+        android:text="@string/btn_delete"
         android:layout_gravity="center"
         android:id="@+id/deleteBtn" />
 </androidx.appcompat.widget.LinearLayoutCompat>

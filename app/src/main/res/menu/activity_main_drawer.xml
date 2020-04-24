@@ -38,5 +38,4 @@
                 android:title="@string/menu_share" />
         </menu>
     </item>
-    -->
 </menu>

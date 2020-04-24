@@ -14,6 +14,7 @@ public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME = "AreaRating";
     private static final String COL_TIME = "Time";
+    private static final String COL_PINCODE = "Pincode";
     private static final String COL_LOCATION_LAT = "Lat";
     private static final String COL_LOCATION_LONG = "Long";
 
@@ -25,6 +26,7 @@ public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTable = "create table IF NOT EXISTS " + TABLE_NAME + " (" +
                 COL_TIME + " TEXT, " +
+                COL_PINCODE + " TEXT, " +
                 COL_LOCATION_LAT + " REAL," +
                 COL_LOCATION_LONG + " REAL)";
         db.execSQL(createTable);
@@ -36,10 +38,11 @@ public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String time, double latitude, double longitude) {
+    public boolean insertData(String time, String pincode, double latitude, double longitude) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TIME, time);
+        contentValues.put(COL_PINCODE, pincode);
         contentValues.put(COL_LOCATION_LAT, latitude);
         contentValues.put(COL_LOCATION_LONG, longitude);
 

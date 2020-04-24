@@ -34,7 +34,7 @@ import java.util.TimeZone;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class CovidTrackerJobService extends JobService implements LocationListener {
 
-    private static String TAG = CovidTracker.class.getName();
+    private static String TAG = CovidTrackerJobService.class.getName();
     private Context mContext = null;
     boolean isWorking = false;
 
@@ -69,7 +69,7 @@ public class CovidTrackerJobService extends JobService implements LocationListen
 
     int geocoderMaxResults = 1;
     private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 1; // 1 meter
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 30 * 1; // 30 sec. minute
+    private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 30; // 30 sec. minute
     protected LocationManager locationManager;
     private String provider_info;
 
@@ -293,7 +293,7 @@ public class CovidTrackerJobService extends JobService implements LocationListen
             sdf.setTimeZone(tz);
             String localTime = sdf.format(cal.getTime());
             Covid19AreaRatingDBHelper mdb = new Covid19AreaRatingDBHelper(this);
-            mdb.insertData(localTime, location.getLatitude(), location.getLongitude());
+            mdb.insertData(localTime, getPostalCode(this), location.getLatitude(), location.getLongitude());
         }
     }
 

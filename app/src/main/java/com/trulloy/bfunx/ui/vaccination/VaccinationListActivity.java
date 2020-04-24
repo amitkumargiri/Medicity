@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -26,7 +25,7 @@ public class VaccinationListActivity extends AppCompatActivity {
     private VaccineListDBHelper mdb;
     private ListView vaccineListView;
     private Button saveVaccineBtn;
-    private List<String> vaccines = VaccinationName.VACCINES;
+    private List<String> vaccines = VaccinationName.VACCINES_BIRTH;
     private List<String> vaccineListTakenByChild;
 
     @Override
