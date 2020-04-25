@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8ABAAE"
-    tools:context=".ui.vaccination.VaccinationListActivity">
-        <Button
+    tools:context="com.trulloy.bfunx.ui.vaccination.VaccinationListActivity">
+    <Button
             android:id="@+id/saveVaccineBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,58 +21,4 @@
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:id="@+id/birthVaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="6 Weeks" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/week6VaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="10 Weeks" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/week10VaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="14 Weeks" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/week14VaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="6, 9, 12, 15 Months" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/months691215VaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="18 to 18 Months" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/months1618VaccineList" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2, 4, 6, 10, 12 Years" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:id="@+id/months2461012VaccineList" />
 </androidx.appcompat.widget.LinearLayoutCompat>

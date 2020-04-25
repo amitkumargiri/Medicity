@@ -23,7 +23,7 @@ public class VaccinationListActivity extends AppCompatActivity {
     protected static String childAadharNo;
 
     private VaccineListDBHelper mdb;
-    private ListView vaccineListView;
+    private ListView birthVaccineList; // week6VaccineList, week10VaccineList, week14VaccineList, months691215VaccineList, months1618VaccineList, months2461012VaccineList;
     private Button saveVaccineBtn;
     private List<String> vaccines = VaccinationName.VACCINES_BIRTH;
     private List<String> vaccineListTakenByChild;
@@ -35,15 +35,17 @@ public class VaccinationListActivity extends AppCompatActivity {
 
         mdb = new VaccineListDBHelper(this);
         saveVaccineBtn = findViewById(R.id.saveVaccineBtn);
-        vaccineListView = findViewById(R.id.birthVaccineList);
+        birthVaccineList = findViewById(R.id.birthVaccineList);
+
         vaccineListTakenByChild = populateData();
-        vaccineListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        vaccineListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, vaccines){
+
+        birthVaccineList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        birthVaccineList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, vaccines){
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View row = super.getView(position, convertView, parent);
                 if(vaccineListTakenByChild.contains(getItem(position))) {
-                    vaccineListView.setItemChecked(position,true);
+                    birthVaccineList.setItemChecked(position,true);
                     row.setBackgroundColor (Color.GRAY); // some color // do something change color
                 } else {
                     row.setBackgroundColor (Color.TRANSPARENT); // // default state and default color
@@ -55,7 +57,7 @@ public class VaccinationListActivity extends AppCompatActivity {
         saveVaccineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SparseBooleanArray checkedVaccines = vaccineListView.getCheckedItemPositions();
+                SparseBooleanArray checkedVaccines = birthVaccineList.getCheckedItemPositions();
                 for (int i=0; i<vaccines.size(); i++) {
                     if (!vaccineListTakenByChild.contains(vaccines.get(i)) && checkedVaccines.get(i)) {
                         mdb.insertData(childAadharNo, vaccines.get(i), "Today");
