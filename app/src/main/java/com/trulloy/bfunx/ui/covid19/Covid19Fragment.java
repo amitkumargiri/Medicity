@@ -205,7 +205,7 @@ public class Covid19Fragment extends Fragment {
         new JsonCountryTask().execute(Constant.API_URL_FOR_WORLD_DATA);
 
         JobScheduler jobScheduler = (JobScheduler) getContext().getSystemService(Context.JOB_SCHEDULER_SERVICE);
-        JobInfo jobInfo = new JobInfo.Builder(101, new ComponentName(getContext(), CovidTrackerJobService.class))
+        JobInfo jobInfo = new JobInfo.Builder(Constant.JOB_SCHEDULER_TRACKER_ID, new ComponentName(getContext(), CovidTrackerJobService.class))
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                 .setPeriodic(Constant.T_15_MINS)
                 .build();
