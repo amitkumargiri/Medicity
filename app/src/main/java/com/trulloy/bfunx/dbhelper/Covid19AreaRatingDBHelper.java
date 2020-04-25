@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.HashMap;
+
 public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "Covid19AreaRating";
@@ -54,6 +56,14 @@ public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public Cursor getAllDataAndClear() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selectQuery = "Select * from " + TABLE_NAME;
+        Cursor data = db.rawQuery(selectQuery, null);
+        db.rawQuery("DELETE from " + TABLE_NAME, null);
+        return data;
+    }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "Select * from " + TABLE_NAME;
@@ -61,7 +71,7 @@ public class Covid19AreaRatingDBHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    public int deleteData() {
+    public int deleteAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "DELETE from " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);

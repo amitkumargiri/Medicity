@@ -10,6 +10,9 @@ Task:
 Coronavirus cases -
 https://api.covid19india.org/data.json
 
+Implementing ListView For Corona Details:
+https://appsandbiscuits.com/listview-tutorial-android-12-ccef4ead27cc
+
 Commands:
 
 git status | grep app | cut -f2 -d":" | sed 's/ //g' |  perl -ne 'print "./$_"' | xargs -I '{}' cp '{}' ./temp/

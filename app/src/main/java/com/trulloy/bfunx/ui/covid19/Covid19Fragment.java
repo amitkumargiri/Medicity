@@ -80,11 +80,7 @@ public class Covid19Fragment extends Fragment {
                 JSONObject data = (JSONObject) worldobj.get(JsonConstant.WORLD);
                 worldData = new Covid19Data(data.getInt(JsonConstant.CONFIRMED), data.getInt(JsonConstant.RECOVERED), data.getInt(JsonConstant.DECEASED));
                 return "success";
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             } finally {
                 if (connection != null) {
@@ -144,11 +140,7 @@ public class Covid19Fragment extends Fragment {
                 JSONObject data = (JSONObject) worldobj.get(JsonConstant.COUNTRY);
                 countryData = new Covid19Data(data.getInt(JsonConstant.CONFIRMED), data.getInt(JsonConstant.RECOVERED), data.getInt(JsonConstant.DECEASED));
                 return "success";
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             } finally {
                 if (connection != null) {
