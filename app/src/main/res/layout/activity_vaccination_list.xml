@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#8ABAAE"
     tools:context=".ui.vaccination.VaccinationListActivity">
-        <Button
+    <Button
             android:id="@+id/saveVaccineBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
