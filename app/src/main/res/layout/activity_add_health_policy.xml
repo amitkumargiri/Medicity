@@ -1,152 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:background="#8ABAAE"
+    android:orientation="vertical"
     tools:context=".ui.home.AddHealthPolicyActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Number"/>
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/policyNumberEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Policy Number"/>
-    </LinearLayout>
+            //1st Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Name"/>
-        <EditText
-            android:id="@+id/policyNameEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Policy Name"
-            android:background="@drawable/text_bg"/>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Number"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Renew Amount"/>
-        <EditText
-            android:id="@+id/policyAmountEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Policy Amount"
-            android:inputType="number"/>
-    </LinearLayout>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:id="@+id/policyNumberEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Policy Number"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Person Name"/>
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/personNameEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Person Name"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+            //2nd row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Buy Date"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Name"/>
+                />
 
-        <EditText
-            android:id="@+id/policyBuyDateEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Policy Buy Date"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:id="@+id/policyNameEdtTxt"
+                    android:ems="10"
+                    android:hint="Policy Name"
+                    android:background="@drawable/text_bg"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Coverage Detail"/>
 
-        <EditText
-            android:id="@+id/policyCoverageDetailEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="120dp"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Policy Coverage Detail (max. 500 chars)"/>
-    </LinearLayout>
+            </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_save"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:id="@+id/saveHealthPolicy"/>
+            ///3rd row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Renew Amount"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:id="@+id/policyAmountEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Policy Amount"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            //4th row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Person Name"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:id="@+id/personNameEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Person Name"/>
+
+            </LinearLayout>
+
+            //5th row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Buy Date"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:id="@+id/policyBuyDateEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Policy Buy Date"/>
+
+            </LinearLayout>
+
+            //6th row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Coverage Detail"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:id="@+id/policyCoverageDetailEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Policy Coverage Detail (max. 500 chars)"/>
+
+            </LinearLayout>
+
+            //Button
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="@string/btn_save"
+                    android:id="@+id/saveHealthPolicy"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

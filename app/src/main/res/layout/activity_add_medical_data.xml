@@ -1,176 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:background="#8ABAAE"
+    android:orientation="vertical"
     tools:context=".ui.home.AddMedicalDataActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Type"/>
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/healTypeSpn"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:entries="@array/healtype_arrays"/>
+            //1st Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Type" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:ems="10"
+                    android:id="@+id/healTypeSpn"
+                    android:entries="@array/healtype_arrays"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Visited Date"/>
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/dateEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Date"
-            android:background="@drawable/text_bg"/>
+            //2nd  Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Visited Date"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:entries="@array/healtype_arrays"
+                    android:id="@+id/dateEdtTxt"
+                    android:ems="10"
+                    android:hint="Enter Date"
+                    android:background="@drawable/text_bg"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Doctor's Name"/>
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/docnameEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Doctor's Name"
-            android:background="@drawable/text_bg"/>
+            //3rd   Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Doctor's Name"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:entries="@array/healtype_arrays"
+                    android:id="@+id/docnameEdtTxt"
+                    android:ems="10"
+                    android:hint="Enter Doctor's Name"
+                    android:background="@drawable/text_bg"/>
 
 
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+            //4th   Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Reason"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Reason"/>
 
-        <EditText
-            android:id="@+id/reasonEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="120dp"
-            android:ems="10"
-            android:hint="Why You Visited"
-            android:background="@drawable/text_bg"
-            android:gravity="start|top"
-            android:inputType="textMultiLine" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:entries="@array/healtype_arrays"
+                    android:id="@+id/reasonEdtTxt"
+                    android:ems="10"
+                    android:hint="Why You Visited"
+                    android:background="@drawable/text_bg"
+                    android:inputType="textMultiLine" />
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Medicines Taken"/>
+            //5th   Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-        <EditText
-            android:id="@+id/medicineEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="start|top"
-            android:hint="Medicines Name"
-            android:inputType="textMultiLine"
-            android:background="@drawable/text_bg"/>
-    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Medicines Taken"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:entries="@array/healtype_arrays"
+                    android:id="@+id/medicineEdtTxt"
+                    android:ems="10"
+                    android:hint="Medicines Name"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/text_bg"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:text="Amount"/>
 
-        <EditText
-            android:id="@+id/amountEdtTxt"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:background="@drawable/text_bg"
-            android:hint="Spent Amount"
-            android:inputType="number"/>
+            </LinearLayout>
 
-    </LinearLayout>
+            //6th   Row
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:text="Amount"/>
 
-        <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Save"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:gravity="center"
+                    android:entries="@array/healtype_arrays"
+                    android:id="@+id/amountEdtTxt"
+                    android:ems="10"
+                    android:background="@drawable/text_bg"
+                    android:hint="Spent Amount"
+                    android:inputType="number"/>
 
-    </LinearLayout>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+
+            //Button
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="@string/btn_save"
+                    android:id="@+id/saveBtn"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
