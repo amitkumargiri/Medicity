@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.trulloy.bfunx.R;
@@ -48,6 +49,10 @@ public class Covid19Fragment extends Fragment {
     private Covid19Data worldData, countryData;
     private TextView worldConfirmedTxtView, worldRecoveredTxtView, worldDeceasedTxtView,
             countryConfirmedTxtView, countryRecoveredTxtView, countryDeceasedTxtView;
+    private ListView covid19CitiesLstView;
+    private String[] confirmed = {"200", "210", "300", "70"};
+    private String[] recovered = {"200", "210", "300", "70"};
+    private String[] deceased = {"200", "210", "300", "70"};
 
     private class JsonWorldTask extends AsyncTask<String, String, String> {
         
@@ -191,6 +196,8 @@ public class Covid19Fragment extends Fragment {
         countryConfirmedTxtView = root.findViewById(R.id.countryConfirmedTxtView);
         countryRecoveredTxtView = root.findViewById(R.id.countryRecoveredTxtView);
         countryDeceasedTxtView = root.findViewById(R.id.countryDeceasedTxtView);
+
+        covid19CitiesLstView = root.findViewById(R.id.covid19CitiesLstView);
         
         ActivityCompat.requestPermissions(this.getActivity(),
                 new String[]{
@@ -203,6 +210,9 @@ public class Covid19Fragment extends Fragment {
 
         new JsonWorldTask().execute(Constant.API_URL_FOR_WORLD_DATA);
         new JsonCountryTask().execute(Constant.API_URL_FOR_WORLD_DATA);
+
+        ShowCountListAdapter adapter = new ShowCountListAdapter(this.getActivity(), confirmed, recovered, deceased);
+        covid19CitiesLstView.setAdapter(adapter);
 
         JobScheduler jobScheduler = (JobScheduler) getContext().getSystemService(Context.JOB_SCHEDULER_SERVICE);
         JobInfo jobInfo = new JobInfo.Builder(Constant.JOB_SCHEDULER_TRACKER_ID, new ComponentName(getContext(), CovidTrackerJobService.class))
