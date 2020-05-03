@@ -12,20 +12,26 @@ import androidx.annotation.NonNull;
 
 import com.trulloy.bfunx.R;
 
+import java.util.List;
+
 public class ShowCountListAdapter extends ArrayAdapter {
 
     private final Activity context;
+    private final String[] cities;
     private final String[] confirmed;
+    private final String[] active;
     private final String[] recovered;
     private final String[] deceased;
 
-    public ShowCountListAdapter(Activity context, String[] nameArrayParam, String[] infoArrayParam, String[] imageIDArrayParam){
-        super(context, R.layout.covid19_listview_row , nameArrayParam);
+    public ShowCountListAdapter(Activity context, String[] citiesArrayParam, String[] confirmed, String[] active, String[] recovered, String[] dead){
+        super(context, R.layout.covid19_listview_row , citiesArrayParam);
 
         this.context=context;
-        this.confirmed = imageIDArrayParam;
-        this.recovered = nameArrayParam;
-        this.deceased = infoArrayParam;
+        this.cities = citiesArrayParam;
+        this.confirmed = confirmed;
+        this.active = active;
+        this.recovered = recovered;
+        this.deceased = dead;
     }
 
     public View getView(int position, View view, ViewGroup parent) {
@@ -33,12 +39,16 @@ public class ShowCountListAdapter extends ArrayAdapter {
         View rowView=inflater.inflate(R.layout.covid19_listview_row, null,true);
 
         //this code gets references to objects in the listview_row.xml file
+        TextView cityNameTxtView = (TextView) rowView.findViewById(R.id.cityNameTxtView);
         TextView confirmedLvTxtView = (TextView) rowView.findViewById(R.id.confirmedLvTxtView);
+        TextView activeLvTxtView = (TextView) rowView.findViewById(R.id.activeLvTxtView);
         TextView recoveredLvTxtView = (TextView) rowView.findViewById(R.id.recoveredLvTxtView);
         TextView deceasedLvTxtView = (TextView) rowView.findViewById(R.id.deceasedLvTxtView);
 
         //this code sets the values of the objects to values from the arrays
+        cityNameTxtView.setText(cities[position]);
         confirmedLvTxtView.setText(confirmed[position]);
+        activeLvTxtView.setText(active[position]);
         recoveredLvTxtView.setText(recovered[position]);
         deceasedLvTxtView.setText(deceased[position]);
 

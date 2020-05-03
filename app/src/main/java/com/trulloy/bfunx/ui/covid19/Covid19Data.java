@@ -1,11 +1,16 @@
 package com.trulloy.bfunx.ui.covid19;
 
 public class Covid19Data {
+
+    private String replace;
     private int confirmed = -1;
+    private int active = -1;
     private int recovered = -1;
     private int deceased = -1;
 
-    public Covid19Data(int confirmed, int recovered, int deceased) {
+    public Covid19Data(String replace, int confirmed, int active, int recovered, int deceased) {
+        this.replace = replace;
+        this.active = active;
         this.confirmed = confirmed;
         this.recovered = recovered;
         this.deceased = deceased;
@@ -33,5 +38,20 @@ public class Covid19Data {
 
     public void setDeceased(int deceased) {
         this.deceased = deceased;
+    }
+
+    public String getreplace() { return replace; }
+
+    public void setreplace(String replace) { this.replace = replace; }
+
+    @Override
+    public String toString() {
+        return "Covid19Data{" +
+                "replace='" + replace + '\'' +
+                ", confirmed=" + confirmed +
+                ", active=" + active +
+                ", recovered=" + recovered +
+                ", deceased=" + deceased +
+                '}';
     }
 }

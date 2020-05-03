@@ -33,6 +33,11 @@
         <item>Self</item>
         <item>Doctor</item>
     </string-array>
+    <string-array name="countryName_arrays">
+        <item>India</item>
+        <item>United States</item>
+    </string-array>
+
     <string-array name="datatype_arrays">
         <item>Health Policy</item>
         <item>Child Data</item>

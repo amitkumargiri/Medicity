@@ -8,6 +8,10 @@
     android:background="#8ABAAE"
     android:gravity="top">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="World" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,6 +30,17 @@
             android:id="@+id/worldDeceasedTxtView" />
     </LinearLayout>
 
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:text=""
+        android:gravity="center"
+        android:ems="10"
+        android:id="@+id/selectCountrySpn"
+        android:entries="@array/countryName_arrays" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,8 +58,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/countryDeceasedTxtView" />
     </LinearLayout>
+    <!--
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/covid19CitiesLstView" />
+        android:id="@+id/covid19CitiesLstView" /> -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/debugCovidString" />
 </androidx.appcompat.widget.LinearLayoutCompat>
