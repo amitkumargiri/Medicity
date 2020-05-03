@@ -50,6 +50,7 @@ public class Covid19Fragment extends Fragment {
     private TextView worldConfirmedTxtView, worldRecoveredTxtView, worldDeceasedTxtView,
             countryConfirmedTxtView, countryRecoveredTxtView, countryDeceasedTxtView;
     // private ListView covid19CitiesLstView;
+    private View root;
     private Spinner selectCountrySpn;
     private List<Covid19Data> covid19DataList;
 
@@ -106,6 +107,9 @@ public class Covid19Fragment extends Fragment {
             super.onPostExecute(result);
             // TODO: Change the UI and update all state list
             if (worldData != null) {
+                worldConfirmedTxtView = root.findViewById(R.id.worldConfirmedTxtView);
+                worldRecoveredTxtView = root.findViewById(R.id.worldRecoveredTxtView);
+                worldDeceasedTxtView = root.findViewById(R.id.worldDeceasedTxtView);
                 worldConfirmedTxtView.setText(worldData.getConfirmed());
                 worldRecoveredTxtView.setText(worldData.getRecovered());
                 worldDeceasedTxtView.setText(worldData.getDeceased());
@@ -250,10 +254,7 @@ public class Covid19Fragment extends Fragment {
             alert.show();
         }
         */
-        
-        worldConfirmedTxtView = root.findViewById(R.id.worldConfirmedTxtView);
-        worldRecoveredTxtView = root.findViewById(R.id.worldRecoveredTxtView);
-        worldDeceasedTxtView = root.findViewById(R.id.worldDeceasedTxtView);
+
         countryConfirmedTxtView = root.findViewById(R.id.countryConfirmedTxtView);
         countryRecoveredTxtView = root.findViewById(R.id.countryRecoveredTxtView);
         countryDeceasedTxtView = root.findViewById(R.id.countryDeceasedTxtView);
