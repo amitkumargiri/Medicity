@@ -49,7 +49,7 @@ public class Covid19Fragment extends Fragment {
     private Covid19Data worldData, countryData;
     private TextView worldConfirmedTxtView, worldRecoveredTxtView, worldDeceasedTxtView,
             countryConfirmedTxtView, countryRecoveredTxtView, countryDeceasedTxtView;
-    // private ListView covid19CitiesLstView;
+    private ListView covid19CitiesLstView;
     private View root;
     private Spinner selectCountrySpn;
     private List<Covid19Data> covid19DataList;
@@ -99,7 +99,7 @@ public class Covid19Fragment extends Fragment {
                     e.printStackTrace();
                 }
             }
-            return null;
+            return "fail";
         }
 
         @Override
@@ -107,12 +107,9 @@ public class Covid19Fragment extends Fragment {
             super.onPostExecute(result);
             // TODO: Change the UI and update all state list
             if (worldData != null) {
-                worldConfirmedTxtView = root.findViewById(R.id.worldConfirmedTxtView);
-                worldRecoveredTxtView = root.findViewById(R.id.worldRecoveredTxtView);
-                worldDeceasedTxtView = root.findViewById(R.id.worldDeceasedTxtView);
-                worldConfirmedTxtView.setText(worldData.getConfirmed());
-                worldRecoveredTxtView.setText(worldData.getRecovered());
-                worldDeceasedTxtView.setText(worldData.getDeceased());
+                worldConfirmedTxtView.setText(worldData.getConfirmed() + "");
+                worldRecoveredTxtView.setText(worldData.getRecovered() + "");
+                worldDeceasedTxtView.setText(worldData.getDeceased() + "");
             }
         }
     }
@@ -258,16 +255,19 @@ public class Covid19Fragment extends Fragment {
         countryConfirmedTxtView = root.findViewById(R.id.countryConfirmedTxtView);
         countryRecoveredTxtView = root.findViewById(R.id.countryRecoveredTxtView);
         countryDeceasedTxtView = root.findViewById(R.id.countryDeceasedTxtView);
-        selectCountrySpn = root.findViewById(R.id.selectCountrySpn);
 
-        // covid19CitiesLstView = root.findViewById(R.id.covid19CitiesLstView);
+        worldConfirmedTxtView = root.findViewById(R.id.worldConfirmedTxtView);
+        worldRecoveredTxtView = root.findViewById(R.id.worldRecoveredTxtView);
+        worldDeceasedTxtView = root.findViewById(R.id.worldDeceasedTxtView);
+
+        covid19CitiesLstView = root.findViewById(R.id.covid19CitiesLstView);
         
         ActivityCompat.requestPermissions(this.getActivity(),
                 new String[]{
-                        Manifest.permission.INTERNET,
-                        Manifest.permission.ACCESS_FINE_LOCATION,
-                        Manifest.permission.ACCESS_COARSE_LOCATION,
-                        Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                    Manifest.permission.INTERNET,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION
                 },
                 2);
 
